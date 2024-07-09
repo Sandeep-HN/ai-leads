@@ -13,7 +13,6 @@ pipeline {
         }
         stage('Tomcat Deploy -Dev'){
             steps{
-                
                 sshagent(['tomcat-dev']) {
                     // copy war file to tomcat
                    sh 'scp -o StrictHostKeyChecking=no target/ai-leads.war ec2-user@172.31.47.174:/opt/tomcat/webapps'
